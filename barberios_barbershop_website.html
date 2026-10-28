@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARBERIOS BARBERSHOP | Jalan Kampung Paya Jauh, Temerloh</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bb: {
+                            primary: '#10B981', // Emerald green vibe
+                            primaryDark: '#059669',
+                            dark: '#090D16',
+                            card: '#111827',
+                            border: '#1F2937',
+                            gold: '#F59E0B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Outfit"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #090D16;
+            color: #F3F4F6;
+        }
+        .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-bb-dark text-slate-100 selection:bg-bb-primary selection:text-slate-950 min-h-screen">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-bb-dark/90 backdrop-blur-md border-b border-bb-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-bb-primary to-emerald-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-bb-primary/20 group-hover:scale-105 transition-transform">
+                        <i data-lucide="scissors" class="w-6 h-6 stroke-[2.5]"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl sm:text-2xl font-extrabold tracking-wider text-white uppercase font-heading">BARBERIOS</span>
+                        </div>
+                        <p class="text-[10px] tracking-widest text-bb-primary font-semibold uppercase">Temerloh • Premium Grooming</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
+                    <a href="#about" class="hover:text-bb-primary transition-colors">Utama</a>
+                    <a href="#services" class="hover:text-bb-primary transition-colors">Perkhidmatan</a>
+                    <a href="#hours" class="hover:text-bb-primary transition-colors">Waktu Operasi</a>
+                    <a href="#location" class="hover:text-bb-primary transition-colors">Lokasi</a>
+                    <a href="#booking" class="px-6 py-2.5 rounded-full bg-bb-primary hover:bg-bb-primaryDark text-slate-950 font-bold transition-all shadow-md shadow-bb-primary/20 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i> Tempah Slot
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="menuBtn" class="md:hidden p-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-bb-card border border-bb-border">
+                    <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-bb-card border-b border-bb-border px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block py-2 text-slate-300 hover:text-bb-primary">Utama</a>
+            <a href="#services" class="mobile-link block py-2 text-slate-300 hover:text-bb-primary">Perkhidmatan</a>
+            <a href="#hours" class="mobile-link block py-2 text-slate-300 hover:text-bb-primary">Waktu Operasi</a>
+            <a href="#location" class="mobile-link block py-2 text-slate-300 hover:text-bb-primary">Lokasi</a>
+            <a href="#booking" class="mobile-link block py-2.5 text-center rounded-xl bg-bb-primary text-slate-950 font-bold">
+                Tempah Slot Sekarang
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="about" class="relative py-20 md:py-32 overflow-hidden bg-grid-pattern border-b border-bb-border">
+        <!-- Glow Light -->
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-bb-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6 text-center md:text-left">
+                    <!-- Status Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-bb-card border border-bb-border text-sm">
+                        <span id="statusDot" class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                        <span id="statusText" class="text-slate-300 font-medium">Semak status kedai...</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight font-heading">
+                        Gaya Potongan Rambut <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-bb-primary via-emerald-300 to-teal-400">Paling Segar</span> <br />
+                        Di Temerloh.
+                    </h1>
+
+                    <p class="text-slate-400 text-base sm:text-lg max-w-lg mx-auto md:mx-0 leading-relaxed">
+                        Selamat datang ke <strong class="text-white">Barberios Barbershop</strong>. Kepakaran potongan rambut moden, gaya fade kemas, serta penjagaan janggut profesional di Batu 2 1/2, Jalan Maran.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
+                        <a href="#booking" class="px-8 py-4 rounded-xl bg-bb-primary hover:bg-bb-primaryDark text-slate-950 font-extrabold text-lg transition-all shadow-xl shadow-bb-primary/20 flex items-center justify-center gap-3">
+                            <i data-lucide="scissors" class="w-5 h-5"></i>
+                            Tempah WhatsApp
+                        </a>
+                        <a href="https://wa.me/60136848296" target="_blank" rel="noreferrer" class="px-8 py-4 rounded-xl bg-bb-card hover:bg-slate-800 text-white font-semibold text-lg border border-bb-border transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="phone" class="w-5 h-5 text-bb-primary"></i>
+                            013-684 8296
+                        </a>
+                    </div>
+
+                    <!-- Quick Highlights -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-bb-border">
+                        <div class="bg-bb-card/60 p-3 rounded-xl border border-bb-border">
+                            <p class="text-lg sm:text-xl font-bold text-bb-primary font-heading">Fade & Cut</p>
+                            <p class="text-[11px] text-slate-400">Gaya Pakar</p>
+                        </div>
+                        <div class="bg-bb-card/60 p-3 rounded-xl border border-bb-border">
+                            <p class="text-lg sm:text-xl font-bold text-white font-heading">Selesa</p>
+                            <p class="text-[11px] text-slate-400">Suasana Moden</p>
+                        </div>
+                        <div class="bg-bb-card/60 p-3 rounded-xl border border-bb-border">
+                            <p class="text-lg sm:text-xl font-bold text-bb-gold font-heading">Setiap Hari</p>
+                            <p class="text-[11px] text-slate-400">Kecuali Rabu</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Card -->
+                <div class="relative">
+                    <div class="relative mx-auto max-w-md bg-bb-card border border-bb-border p-8 rounded-3xl shadow-2xl overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-bb-primary/20 to-transparent rounded-bl-full pointer-events-none"></div>
+
+                        <div class="flex justify-between items-start mb-6 border-b border-bb-border pb-4">
+                            <div>
+                                <h3 class="text-2xl font-extrabold font-heading text-white tracking-wider">BARBERIOS</h3>
+                                <p class="text-xs text-bb-primary font-semibold tracking-widest uppercase">Professional Barbershop</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-bb-primary/15 border border-bb-primary/30 flex items-center justify-center text-bb-primary">
+                                <i data-lucide="sparkles" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 my-6">
+                            <div class="flex items-center gap-4 p-3.5 rounded-xl bg-bb-dark/80 border border-bb-border">
+                                <i data-lucide="scissors" class="text-bb-primary w-5 h-5 shrink-0"></i>
+                                <span class="text-sm text-slate-200">Modern Fade, Taper & Classic Haircut</span>
+                            </div>
+                            <div class="flex items-center gap-4 p-3.5 rounded-xl bg-bb-dark/80 border border-bb-border">
+                                <i data-lucide="shield-check" class="text-bb-gold w-5 h-5 shrink-0"></i>
+                                <span class="text-sm text-slate-200">Beard Trim & Hot Towel Treatment</span>
+                            </div>
+                            <div class="flex items-center gap-4 p-3.5 rounded-xl bg-bb-dark/80 border border-bb-border">
+                                <i data-lucide="award" class="text-emerald-400 w-5 h-5 shrink-0"></i>
+                                <span class="text-sm text-slate-200">Peralatan Bersih & Pelayanan Mesra</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-bb-border flex justify-between items-center text-xs text-slate-400">
+                            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-bb-primary"></i> Jalan Maran, Temerloh</span>
+                            <span class="text-bb-primary font-bold">#BarberiosTemerloh</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 bg-bb-dark border-b border-bb-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bb-primary/10 text-bb-primary border border-bb-primary/20 text-xs font-bold uppercase tracking-wider mb-3">
+                    <i data-lucide="scissors" class="w-3.5 h-3.5"></i> Menu Perkhidmatan
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white font-heading">Senarai Perkhidmatan & Harga</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Pilih kemasan gaya anda bersama tukang gunting profesional kami.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-bb-card border border-bb-border hover:border-bb-primary/60 rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white group-hover:text-bb-primary transition-colors">Signature Haircut</h3>
+                                <span class="text-xs text-bb-primary">Potongan Moden / Fade</span>
+                            </div>
+                            <span class="px-3 py-1 bg-bb-primary/20 text-emerald-300 border border-bb-primary/30 text-sm font-bold rounded-full">RM 20 - 25</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Potongan rambut presisi mengikut bentuk muka, konsultasi gaya, cucian ringkas, dan penataan kemas.</p>
+                    </div>
+                    <button onclick="selectService('Signature Haircut (RM 20 - 25)')" class="w-full py-2.5 rounded-xl bg-bb-dark group-hover:bg-bb-primary hover:!bg-bb-primaryDark text-slate-300 group-hover:text-slate-950 font-bold text-sm transition-all border border-bb-border">
+                        Pilih Perkhidmatan
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-bb-card border border-bb-border hover:border-bb-primary/60 rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white group-hover:text-bb-primary transition-colors">Beard Trim & Shave</h3>
+                                <span class="text-xs text-bb-primary">Ukiran Janggut & Misai</span>
+                            </div>
+                            <span class="px-3 py-1 bg-bb-primary/20 text-emerald-300 border border-bb-primary/30 text-sm font-bold rounded-full">RM 10 - 15</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Grooming janggut dan misai kemas menggunakan pisau cukur bersih dan sentuhan tuala panas.</p>
+                    </div>
+                    <button onclick="selectService('Beard Trim & Shave (RM 10 - 15)')" class="w-full py-2.5 rounded-xl bg-bb-dark group-hover:bg-bb-primary hover:!bg-bb-primaryDark text-slate-300 group-hover:text-slate-950 font-bold text-sm transition-all border border-bb-border">
+                        Pilih Perkhidmatan
+                    </button>
+                </div>
+
+                <!-- Service 3 (Featured) -->
+                <div class="bg-bb-card border-2 border-bb-primary rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between relative overflow-hidden shadow-lg shadow-bb-primary/10">
+                    <div class="absolute top-0 right-0 bg-bb-primary text-slate-950 text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-wider font-bold">
+                        ★ POPULAR
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white font-heading">Barberios Full Combo</h3>
+                                <span class="text-xs text-bb-primary">Pakej Lengkap Premium</span>
+                            </div>
+                            <span class="px-3 py-1 bg-bb-primary text-slate-950 text-sm font-bold rounded-full">RM 35 - 40</span>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Pakej Lengkap: Potongan Rambut + Ukiran Janggut + Cuci Kepala + Urutan Ringkas + Hot Towel Treatment.</p>
+                    </div>
+                    <button onclick="selectService('Barberios Full Combo (RM 35 - 40)')" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-bb-primary to-emerald-400 hover:opacity-90 text-slate-950 font-extrabold text-sm transition-all shadow-md">
+                        Pilih Pakej Popular
+                    </button>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-bb-card border border-bb-border hover:border-bb-primary/60 rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white group-hover:text-bb-primary transition-colors">Kids Haircut (Kanak-kanak)</h3>
+                                <span class="text-xs text-bb-primary">Gaya Kanak-kanak Segar</span>
+                            </div>
+                            <span class="px-3 py-1 bg-bb-primary/20 text-emerald-300 border border-bb-primary/30 text-sm font-bold rounded-full">RM 15</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Potongan khas mesra kanak-kanak dengan layanan sabar, selamat, dan kemas.</p>
+                    </div>
+                    <button onclick="selectService('Kids Haircut (Kanak-kanak) (RM 15)')" class="w-full py-2.5 rounded-xl bg-bb-dark group-hover:bg-bb-primary hover:!bg-bb-primaryDark text-slate-300 group-hover:text-slate-950 font-bold text-sm transition-all border border-bb-border">
+                        Pilih Perkhidmatan
+                    </button>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-bb-card border border-bb-border hover:border-bb-primary/60 rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white group-hover:text-bb-primary transition-colors">Hair Coloring / Dye</h3>
+                                <span class="text-xs text-bb-primary">Warna Rambut & Highlight</span>
+                            </div>
+                            <span class="px-3 py-1 bg-bb-primary/20 text-emerald-300 border border-bb-primary/30 text-sm font-bold rounded-full">RM 50+</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Pewarnaan rambut trendi atau perlindungan warna dengan kualiti produk penjagaan rambut terbaik.</p>
+                    </div>
+                    <button onclick="selectService('Hair Coloring / Dye (RM 50+)')" class="w-full py-2.5 rounded-xl bg-bb-dark group-hover:bg-bb-primary hover:!bg-bb-primaryDark text-slate-300 group-hover:text-slate-950 font-bold text-sm transition-all border border-bb-border">
+                        Pilih Perkhidmatan
+                    </button>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-bb-card border border-bb-border hover:border-bb-primary/60 rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white group-hover:text-bb-primary transition-colors">Hair Wash & Styling</h3>
+                                <span class="text-xs text-bb-primary">Cucian & Dandanan Gaya</span>
+                            </div>
+                            <span class="px-3 py-1 bg-bb-primary/20 text-emerald-300 border border-bb-primary/30 text-sm font-bold rounded-full">RM 10</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Cucian rambut bersih menyegarkan dan dandanan mengikut acara anda menggunakan pomade premium.</p>
+                    </div>
+                    <button onclick="selectService('Hair Wash & Styling (RM 10)')" class="w-full py-2.5 rounded-xl bg-bb-dark group-hover:bg-bb-primary hover:!bg-bb-primaryDark text-slate-300 group-hover:text-slate-950 font-bold text-sm transition-all border border-bb-border">
+                        Pilih Perkhidmatan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOURS & LOCATION SECTION -->
+    <section id="hours" class="py-20 bg-grid-pattern border-b border-bb-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Waktu Operasi -->
+                <div class="bg-bb-card border border-bb-border p-8 rounded-3xl shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2.5 rounded-xl bg-bb-primary/20 border border-bb-primary/40 text-bb-primary">
+                            <i data-lucide="clock" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white font-heading">Waktu Operasi</h2>
+                            <p class="text-xs text-bb-primary">Buka Setiap Hari (Kecuali Rabu)</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-400 text-sm mb-6">
+                        Sila ambil perhatian jadual perniagaan kami. Kedai <strong class="text-red-400">TUTUP pada hari Rabu</strong> dan bermula jam 3 petang pada hari Jumaat.
+                    </p>
+
+                    <div class="space-y-3" id="hoursContainer">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+
+                <!-- Lokasi & Contact -->
+                <div id="location" class="bg-bb-card border border-bb-border p-8 rounded-3xl flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-2.5 rounded-xl bg-bb-gold/20 border border-bb-gold/40 text-bb-gold">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-white font-heading">Lokasi & Contact</h2>
+                                <p class="text-xs text-bb-gold">Temerloh, Pahang</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-bb-dark/80 border border-bb-border mb-6">
+                            <p class="text-slate-200 font-bold text-lg mb-1 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-bb-primary"></span>
+                                BARBERIOS BARBERSHOP
+                            </p>
+                            <p class="text-slate-400 text-sm leading-relaxed pl-5">
+                                K4, Lot 3905, Batu 2 1/2, Jalan Maran,<br>
+                                Jalan Kampung Paya Jauh, Simpang, 28000 Temerloh, Pahang
+                            </p>
+                        </div>
+
+                        <div class="flex items-center gap-4 text-slate-300 mb-8 p-4 rounded-2xl bg-bb-dark/80 border border-bb-border">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Hubungi / WhatsApp</p>
+                                <a href="tel:0136848296" class="font-bold text-white hover:text-bb-primary transition-colors text-lg">
+                                    013-684 8296
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps Action -->
+                    <div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=K4+Lot+3905+Batu+2+1/2+Jalan+Maran+Kampung+Paya+Jauh+Temerloh+Pahang" target="_blank" rel="noreferrer" class="w-full py-3.5 px-4 rounded-xl bg-bb-dark hover:bg-slate-800 text-white font-semibold transition-all flex items-center justify-center gap-2 border border-bb-border">
+                            <i data-lucide="external-link" class="w-5 h-5 text-bb-primary"></i>
+                            Buka Lokasi Dalam Google Maps
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section id="booking" class="py-20 bg-bb-dark relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bb-primary/20 text-bb-primary border border-bb-primary/30 text-xs font-bold uppercase tracking-wider mb-2">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i> Tempahan Pantas
+                </div>
+                <h2 class="text-3xl font-extrabold text-white font-heading">Tempah Slot Gunting Rambut</h2>
+                <p class="text-slate-400 text-sm mt-2">Isi borang di bawah untuk menghantar tempahan terus ke WhatsApp Barberios Barbershop.</p>
+            </div>
+
+            <form id="bookingForm" class="bg-bb-card border border-bb-border p-6 sm:p-8 rounded-3xl space-y-6 shadow-2xl">
+                
+                <!-- Nama Pelanggan -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-300 mb-2">Nama Pelanggan</label>
+                    <div class="relative">
+                        <i data-lucide="user" class="absolute left-3.5 top-3.5 text-slate-500 w-5 h-5"></i>
+                        <input type="text" id="customerName" required placeholder="Contoh: Amirul Hakim" class="w-full pl-11 pr-4 py-3 bg-bb-dark border border-bb-border rounded-xl text-white focus:outline-none focus:border-bb-primary transition-colors">
+                    </div>
+                </div>
+
+                <!-- Pilihan Perkhidmatan -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-300 mb-2">Pilihan Perkhidmatan</label>
+                    <select id="serviceSelect" class="w-full px-4 py-3 bg-bb-dark border border-bb-border rounded-xl text-white focus:outline-none focus:border-bb-primary transition-colors">
+                        <option value="Signature Haircut (RM 20 - 25)">Signature Haircut (RM 20 - 25)</option>
+                        <option value="Beard Trim & Shave (RM 10 - 15)">Beard Trim & Shave (RM 10 - 15)</option>
+                        <option value="Barberios Full Combo (RM 35 - 40)">Barberios Full Combo (RM 35 - 40)</option>
+                        <option value="Kids Haircut (Kanak-kanak) (RM 15)">Kids Haircut (Kanak-kanak) (RM 15)</option>
+                        <option value="Hair Coloring / Dye (RM 50+)">Hair Coloring / Dye (RM 50+)</option>
+                        <option value="Hair Wash & Styling (RM 10)">Hair Wash & Styling (RM 10)</option>
+                    </select>
+                </div>
+
+                <!-- Tarikh & Masa -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Tarikh Cadangan</label>
+                        <input type="date" id="bookingDate" required class="w-full px-4 py-3 bg-bb-dark border border-bb-border rounded-xl text-white focus:outline-none focus:border-bb-primary transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Anggaran Masa</label>
+                        <input type="time" id="bookingTime" required class="w-full px-4 py-3 bg-bb-dark border border-bb-border rounded-xl text-white focus:outline-none focus:border-bb-primary transition-colors">
+                    </div>
+                </div>
+
+                <!-- Pilihan Barber -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-300 mb-2">Pilihan Barber (Opsional)</label>
+                    <select id="barberSelect" class="w-full px-4 py-3 bg-bb-dark border border-bb-border rounded-xl text-white focus:outline-none focus:border-bb-primary transition-colors">
+                        <option value="Mana-mana Barber Kelapangan">Mana-mana Barber Yang Kelapangan</option>
+                        <option value="Senior Barber">Senior Barber</option>
+                        <option value="Master Barber">Master Barber</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-bb-primary to-emerald-400 hover:opacity-95 text-slate-950 font-extrabold rounded-xl transition-all shadow-lg shadow-bb-primary/25 text-lg flex items-center justify-center gap-2">
+                    <i data-lucide="message-square" class="w-5 h-5"></i>
+                    Hantar Tempahan Ke WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-bb-border py-12 bg-bb-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-bb-primary flex items-center justify-center text-slate-950 font-bold">
+                    <i data-lucide="scissors" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold tracking-wider text-white uppercase font-heading">BARBERIOS BARBERSHOP</span>
+                    <p class="text-[10px] text-slate-500">Jalan Kampung Paya Jauh, Temerloh, Pahang</p>
+                </div>
+            </div>
+
+            <p class="text-slate-500 text-sm text-center">
+                © <span id="year"></span> Barberios Barbershop. Hak Cipta Terpelihara.
+            </p>
+
+            <div class="flex gap-4 text-slate-400">
+                <a href="https://wa.me/60136848296" target="_blank" class="hover:text-bb-primary transition-colors"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+                <a href="tel:0136848296" class="hover:text-bb-primary transition-colors"><i data-lucide="phone" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Data Waktu Operasi Barberios Barbershop
+        // Rabu - Isnin: 12:00 PM – 10:00 PM (12 to 22)
+        // Jumaat: 3:00 PM – 10:00 PM (15 to 22)
+        // Rabu tutup
+        const hoursData = [
+            { day: "Rabu", time: "Tutup", openHour: 0, closeHour: 0, isClosed: true },
+            { day: "Khamis", time: "12:00 PM – 10:00 PM", openHour: 12, closeHour: 22, isClosed: false },
+            { day: "Jumaat", time: "3:00 PM – 10:00 PM", openHour: 15, closeHour: 22, isClosed: false },
+            { day: "Sabtu", time: "12:00 PM – 10:00 PM", openHour: 12, closeHour: 22, isClosed: false },
+            { day: "Ahad", time: "12:00 PM – 10:00 PM", openHour: 12, closeHour: 22, isClosed: false },
+            { day: "Isnin", time: "12:00 PM – 10:00 PM", openHour: 12, closeHour: 22, isClosed: false },
+            { day: "Selasa", time: "12:00 PM – 10:00 PM", openHour: 12, closeHour: 22, isClosed: false },
+        ];
+
+        // Render Schedule UI
+        const hoursContainer = document.getElementById('hoursContainer');
+        hoursData.forEach(h => {
+            const item = document.createElement('div');
+            item.className = `flex justify-between items-center p-3.5 rounded-xl border ${
+                h.isClosed 
+                    ? 'bg-red-500/5 border-red-500/20 text-slate-400' 
+                    : 'bg-bb-dark/60 border-bb-border text-slate-200'
+            }`;
+            item.innerHTML = `
+                <span class="font-medium">${h.day}</span>
+                <span class="font-semibold text-sm ${h.isClosed ? 'text-red-400' : 'text-bb-primary'}">${h.time}</span>
+            `;
+            hoursContainer.appendChild(item);
+        });
+
+        // Live Status Check
+        function checkOpenStatus() {
+            const now = new Date();
+            const jsDay = now.getDay();
+            const dayMap = { 3: 0, 4: 1, 5: 2, 6: 3, 0: 4, 1: 5, 2: 6 };
+            const todaySchedule = hoursData[dayMap[jsDay]];
+            
+            const currentDecimalHour = now.getHours() + (now.getMinutes() / 60);
+
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+
+            if (todaySchedule.isClosed) {
+                statusDot.className = "w-2.5 h-2.5 rounded-full bg-red-500";
+                statusText.textContent = `Tutup Hari Ini (Cuti Rabu)`;
+            } else if (currentDecimalHour >= todaySchedule.openHour && currentDecimalHour < todaySchedule.closeHour) {
+                statusDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse";
+                statusText.textContent = `Buka Sekarang • Tutup Jam 10:00 PM`;
+            } else {
+                statusDot.className = "w-2.5 h-2.5 rounded-full bg-red-500";
+                statusText.textContent = `Tutup Masa Ini (Waktu Buka: ${todaySchedule.time})`;
+            }
+        }
+        checkOpenStatus();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Set default min date in form
+        const dateInput = document.getElementById('bookingDate');
+        const todayStr = new Date().toISOString().split('T')[0];
+        dateInput.value = todayStr;
+        dateInput.min = todayStr;
+
+        // Function to select service from card
+        function selectService(serviceName) {
+            document.getElementById('serviceSelect').value = serviceName;
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // WhatsApp Form Handler
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('customerName').value;
+            const service = document.getElementById('serviceSelect').value;
+            const date = document.getElementById('bookingDate').value;
+            const time = document.getElementById('bookingTime').value;
+            const barber = document.getElementById('barberSelect').value;
+
+            const message = `Salam / Helo Barberios Barbershop! ✂️\nSaya ingin membuat tempahan slot gunting rambut:\n\n` +
+                `👤 *Nama:* ${name}\n` +
+                `💈 *Perkhidmatan:* ${service}\n` +
+                `📅 *Tarikh:* ${date}\n` +
+                `⏰ *Anggaran Masa:* ${time}\n` +
+                `👤 *Pilihan Barber:* ${barber}\n\n` +
+                `Adakah slot pada tarikh & masa ini masih ada? Terima kasih!`;
+
+            const whatsappNumber = "60136848296";
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Dynamic Year Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
